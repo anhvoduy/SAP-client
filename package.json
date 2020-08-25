@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "node-to-sap",
   "main": "index.js",
+  "engines": {
+    "node": "^12.15.0",
+    "npm": "^6.13.0"
+  },
   "scripts": {
+    "dev": "npx nodemon",
+    "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +23,13 @@
   },
   "homepage": "https://github.com/anhvoduy/node-to-sap#readme",
   "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
     "express": "^4.17.1",
-    "path": "^0.12.7"
+    "lodash": "^4.17.20",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
   }
 }
