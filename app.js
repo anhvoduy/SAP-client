@@ -20,12 +20,6 @@ server.use(function (err, req, res, next) {
 	res.json(error);
 });
 
-const siteApp = path.join(__dirname, 'coins/build');
-server.use('/', express.static(siteApp, { index: 'index.html '}));
-server.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'coins/build', 'index.html'));
-});
-
 const port = process.env.PORT || 3000;
 server.listen(port, () => {
     console.log(`Node Js version: ${process.version} on port: %s`, port);
