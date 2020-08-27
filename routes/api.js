@@ -34,7 +34,6 @@ router.get('/loginsap', async function (req, res, next) {
     try 
     {
         let data = await baseService.loginSAP(userInfo);
-        console.log('data:', data);
         
         res.json({
             code: true,     

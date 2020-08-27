@@ -21,11 +21,9 @@ baseService.getItems = async function(cookieString) {
     return new Promise(function(resolve, reject) {
         api.setCookies(cookieString);
         api.get(url).then(function(res) {
-            console.log('success');
             let { data } = res;
             resolve(data);
-        }).catch(function(err) {
-            console.log('error');
+        }).catch(function(err) {            
             resolve(err);
         });        
     });
