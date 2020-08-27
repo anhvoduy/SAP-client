@@ -12,12 +12,12 @@ baseService.loginSAP = function() {
         Password: "manager"
     };
     return new Promise(function(resolve, reject) {
-        api.post(url, data).then(function(res){
-            console.log(res);
-            resolve(res);
+        api.post(url, data).then(function(res) {
+            let { data } = res;
+            resolve(data);
         }).catch(function(err) {
-            reject(err);
-        });
+            resolve(err);
+        });    
     });
 }
 

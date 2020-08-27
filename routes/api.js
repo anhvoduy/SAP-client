@@ -24,16 +24,20 @@ router.post('/status', function (req, res, next) {
     next();
 });
 
-router.post('/loginsap', async function (req, res, next) {
+router.get('/loginsap', async function (req, res, next) {
     try 
     {
         let data = await baseService.loginSAP();
+        console.log('data:', data);
+        
         res.json({
             code: true,     
             data: data,
             version: info.version,
             time: moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
         });
+
+        next();
     } 
     catch(err) {
         throw err;

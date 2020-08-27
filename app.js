@@ -4,11 +4,11 @@ const http = require('http');
 const https = require('https');
 const fs = require('fs');
 
-//const privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
-//const certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
+const key  = fs.readFileSync('sslcert/key.pem');
+const cert = fs.readFileSync('sslcert/cert.pem');
 const options = {
-    pfx: fs.readFileSync('./sslcert/sap-10-ssl.pfx'),
-    passphrase: 'P@ssw0rd'
+    key: key,
+    cert: cert
 };
 const credentials = options;
 
@@ -32,9 +32,12 @@ server.use(function (err, req, res, next) {
 
 const port = 3000;
 const portssl = 3003;
+
 // server.listen(port, () => {
 //     console.log(`Node Js version: ${process.version} on port: %s`, port);
 // });
+
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
 const httpServer = http.createServer(server);
 httpServer.listen(port);
