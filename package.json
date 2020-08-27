@@ -16,15 +16,12 @@
     "type": "git",
     "url": "git+https://github.com/anhvoduy/node-to-sap.git"
   },
-  "author": "",
+  "author": "voduyanh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/anhvoduy/node-to-sap/issues"
   },
   "homepage": "https://github.com/anhvoduy/node-to-sap#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  },
   "dependencies": {
     "Q": "^1.0.0",
     "axios": "^0.20.0",
@@ -35,5 +32,10 @@
     "moment": "^2.27.0",
     "path": "^0.12.7",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.2",
+    "nodemon": "^2.0.4"
   }
 }
