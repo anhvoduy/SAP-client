@@ -1,6 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
+const http = require('http');
+const https = require('https');
+const fs = require('fs');
+
+//const privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
+//const certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
+const options = {
+    pfx: fs.readFileSync('./sslcert/sap-10-ssl.pfx'),
+    passphrase: 'P@ssw0rd'
+};
+const credentials = options;
 
 // setup express
 const server = express();
@@ -20,7 +30,14 @@ server.use(function (err, req, res, next) {
 	res.json(error);
 });
 
-const port = process.env.PORT || 3000;
-server.listen(port, () => {
-    console.log(`Node Js version: ${process.version} on port: %s`, port);
-});
+const port = 3000;
+const portssl = 3003;
+// server.listen(port, () => {
+//     console.log(`Node Js version: ${process.version} on port: %s`, port);
+// });
+
+const httpServer = http.createServer(server);
+httpServer.listen(port);
+
+const httpsServer = https.createServer(credentials, server);
+httpsServer.listen(portssl);
