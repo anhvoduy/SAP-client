@@ -4,14 +4,6 @@ const http = require('http');
 const https = require('https');
 const fs = require('fs');
 
-const key  = fs.readFileSync('sslcert/key.pem');
-const cert = fs.readFileSync('sslcert/cert.pem');
-const options = {
-    key: key,
-    cert: cert
-};
-const credentials = options;
-
 // setup express
 const server = express();
 server.use(bodyParser.urlencoded({ extended: true }));
@@ -30,14 +22,18 @@ server.use(function (err, req, res, next) {
 	res.json(error);
 });
 
+// setup http + https
 const port = 3000;
 const portssl = 3003;
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0; // TO DO review ssl certificate
 
-// server.listen(port, () => {
-//     console.log(`Node Js version: ${process.version} on port: %s`, port);
-// });
-
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+const key  = fs.readFileSync('sslcert/key.pem');
+const cert = fs.readFileSync('sslcert/cert.pem');
+const options = {
+    key: key,
+    cert: cert
+};
+const credentials = options;
 
 const httpServer = http.createServer(server);
 httpServer.listen(port);
