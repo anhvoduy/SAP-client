@@ -1,7 +1,8 @@
 const axios = require('axios');
+const userInfo = require('../config').userInfo;
 
 const api = axios.create({
-    baseURL: 'https://sap-10:50000'
+    baseURL: userInfo.Url
 });
 
 api.setCookies = function (cookieString) {
