@@ -2,33 +2,39 @@ const router = require('express').Router();
 const moment = require('moment');
 const baseService = require('../services/baseService');
 
-router.get('/accountcategorylist', async function (req, res, next) {
+router.post('/BusinessPartners', async function (req, res, next) {
     try 
     {
+        let cardCode = 'C1', cardName = 'Customer C1', cardType = 'cCustomer';
         await baseService.refreshSession();
-        let accountcategorylist = await baseService.getAccountCategoryList();
-        return res.json({
-            code: true,
-            data: accountcategorylist,
-            time: moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
-        });        
+        let data = await baseService.addBusinessPartners(cardCode, cardName, cardType);
+        return res.json({ code: true, data: data });
     } 
     catch(err) {
         throw err;
     }
 });
 
-router.get('/chartofaccounts', async function (req, res, next) {
+router.get('/BusinessPartners', async function (req, res, next) {
     try 
     {
+        let cardCode = 'C1';
         await baseService.refreshSession();
-        let accounts = await baseService.getChartOfAccounts();
-        return res.json({
-            code: true,
-            data: accounts,
-            time: moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
-        });
-        next();
+        let data = await baseService.getBusinessPartners(cardCode);
+        return res.json({ code: true, data: data });
+    } 
+    catch(err) {
+        throw err;
+    }
+});
+
+router.patch('/BusinessPartners', async function (req, res, next) {
+    try 
+    {
+        let cardCode = 'C1', cardName = 'Customer C1111';
+        await baseService.refreshSession();
+        let data = await baseService.editBusinessPartners(cardCode, cardName);
+        return res.json({ code: true, data: data });
     } 
     catch(err) {
         throw err;

@@ -67,4 +67,48 @@ baseService.getChartOfAccounts = async function() {
     });
 }
 
+baseService.addBusinessPartners = async function(cardCode, cardName, cardType) {
+    let business = {
+        CardCode: cardCode,
+        CardName: cardName,
+        CardType: cardType
+    };
+    let url = '/b1s/v1/BusinessPartners';
+    return new Promise(function(resolve, reject) {
+        api.post(url, business).then(function(res) {
+            let { data } = res;
+            resolve(data);
+        }).catch(function(err) {
+            reject(err);
+        });
+    });
+}
+
+baseService.getBusinessPartners = async function(cardCode) {
+    let url = `/b1s/v1/BusinessPartners('${cardCode}')`;
+    return new Promise(function(resolve, reject) {
+        api.get(url).then(function(res) {
+            let { data } = res;
+            resolve(data);
+        }).catch(function(err) {
+            reject(err);
+        });
+    });
+}
+
+baseService.updateBusinessPartners = async function(cardCode, cardName) {    
+    let business = {
+        CardName: cardName
+    }
+    let url = `/b1s/v1/BusinessPartners('${cardCode}')`;
+    return new Promise(function(resolve, reject) {
+        api.patch(url, business).then(function(res) {
+            let { data } = res;
+            resolve(data);
+        }).catch(function(err) {
+            reject(err);
+        });
+    });
+}
+
 module.exports = baseService;
