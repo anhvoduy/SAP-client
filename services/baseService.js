@@ -56,7 +56,7 @@ baseService.getAccountCategoryList = async function() {
 }
 
 baseService.getChartOfAccounts = async function() {
-    let url = 'b1s/v1/ChartOfAccounts';
+    let url = '/b1s/v1/ChartOfAccounts';
     return new Promise(function(resolve, reject) {
         api.get(url).then(function(res) {
             let { data } = res;
