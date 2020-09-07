@@ -11,6 +11,8 @@ server.use(bodyParser.json());
 
 // setup api
 server.use('/api', require('./routes/api'));
+server.use('/api/account', require('./routes/account'));
+server.use('/api/businesspartners', require('./routes/businesspartners'));
 
 /* error handling: this is middleware to handle error */
 server.use(function (err, req, res, next) {
