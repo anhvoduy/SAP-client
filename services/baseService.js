@@ -1,10 +1,10 @@
 const api = require('./api');
 const userInfo = require('../config').userInfo;
 
-const baseService = function() {
+const Factory = function() {
 }
 
-baseService.loginSAP = function(info) {
+Factory.loginSAP = function(info) {
     let url = '/b1s/v1/Login';
     return new Promise(function(resolve, reject) {
         api.post(url, info).then(function(res) {
@@ -16,7 +16,7 @@ baseService.loginSAP = function(info) {
     });
 }
 
-baseService.refreshSession = function() {
+Factory.refreshSession = function() {
     let url = '/b1s/v1/Login';
     return new Promise(function(resolve, reject) {
         api.post(url, userInfo).then(function(res) {
@@ -30,7 +30,7 @@ baseService.refreshSession = function() {
     });
 }
 
-baseService.getItems = async function(cookieString) {
+Factory.getItems = async function(cookieString) {
     let url = '/b1s/v1/Items';
     return new Promise(function(resolve, reject) {
         api.setCookies(cookieString);
@@ -43,7 +43,7 @@ baseService.getItems = async function(cookieString) {
     });
 }
 
-baseService.getAccountCategoryList = async function() {
+Factory.getAccountCategoryList = async function() {
     let url = '/b1s/v1/AccountCategoryService_GetCategoryList';
     return new Promise(function(resolve, reject) {
         api.get(url).then(function(res) {
@@ -55,7 +55,7 @@ baseService.getAccountCategoryList = async function() {
     });
 }
 
-baseService.getChartOfAccounts = async function() {
+Factory.getChartOfAccounts = async function() {
     let url = '/b1s/v1/ChartOfAccounts';
     return new Promise(function(resolve, reject) {
         api.get(url).then(function(res) {
@@ -67,7 +67,7 @@ baseService.getChartOfAccounts = async function() {
     });
 }
 
-baseService.addBusinessPartners = async function(cardCode, cardName, cardType) {
+Factory.addBusinessPartners = async function(cardCode, cardName, cardType) {
     let business = {
         CardCode: cardCode,
         CardName: cardName,
@@ -84,7 +84,7 @@ baseService.addBusinessPartners = async function(cardCode, cardName, cardType) {
     });
 }
 
-baseService.getBusinessPartners = async function(cardCode) {
+Factory.getBusinessPartners = async function(cardCode) {
     let url = `/b1s/v1/BusinessPartners('${cardCode}')`;
     return new Promise(function(resolve, reject) {
         api.get(url).then(function(res) {
@@ -96,7 +96,7 @@ baseService.getBusinessPartners = async function(cardCode) {
     });
 }
 
-baseService.updateBusinessPartners = async function(cardCode, cardName) {    
+Factory.updateBusinessPartners = async function(cardCode, cardName) {    
     let business = {
         CardName: cardName
     }
@@ -111,4 +111,4 @@ baseService.updateBusinessPartners = async function(cardCode, cardName) {
     });
 }
 
-module.exports = baseService;
+module.exports = Factory;
