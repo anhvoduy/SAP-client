@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/anhvoduy/node-to-sap#readme",
   "dependencies": {
+    "@sap/hana-client": "^2.5.109",
     "Q": "^1.0.0",
     "axios": "^0.20.0",
     "express": "^4.17.1",
