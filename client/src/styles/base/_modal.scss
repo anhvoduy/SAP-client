@@ -1,0 +1,28 @@
+$error-color: #d1370a;
+
+.modal-dialog {
+    transform: translate(0, 25%) !important;
+    .modal-content {
+        .modal-header {
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .modal-body {
+            .error {
+                color: $error-color;
+                text-align: center;
+            }
+        }
+        .modal-footer {
+            button.btnClose.btn.btn-secondary{
+                font-weight: 400;
+                line-height: 40px;
+            }
+            button.btnConfirm.btn.btn-primary{
+                font-weight: 400;
+                line-height: 40px;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@charset 'UTF-8';
+
+// 1. abstracts
+@import
+  'abstracts/animation',
+  'abstracts/functions',
+  'abstracts/mixins',
+  'abstracts/variables';
+
+// 2. Vendors
+@import
+  'vendor/normalize',
+  '~bootstrap/scss/bootstrap.scss'; // from node_modules
+
+// 3. base
+@import 
+  'base/base',
+  'base/loading',
+  'base/modal';
+
+// 4. components
+@import 
+  'components/app',
+  'components/home',
+  'components/about',
+  'components/gold',
+  'components/money';
