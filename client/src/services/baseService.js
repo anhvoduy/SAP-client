@@ -5,12 +5,12 @@ const baseService = function() {
 
 baseService.login = function() {
   let msg = {
-    "CompanyDB": "SBODemoAU",
-    "UserName": "manager",
-    "Password": "manager"
+    CompanyDB: "SBODemoAU",
+    UserName: "manager",
+    Password: "manager"
   };
-  
-  return api.post('Login', msg)
+  debugger;
+  return api.post('/b1s/v1/Login', msg)
   .then(res => {
     const data = res.data;
     return data;

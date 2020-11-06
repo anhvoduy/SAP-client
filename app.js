@@ -25,7 +25,7 @@ server.use(function (err, req, res, next) {
 });
 
 // setup http + https
-const port = 3000;
+const port = 3001;
 const portssl = 3003;
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0; // TO DO review ssl certificate
 

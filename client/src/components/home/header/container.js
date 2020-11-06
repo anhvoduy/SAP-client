@@ -1,12 +1,6 @@
 import React from 'react';
-import baseService from '../../../services/baseService';
 
 const Container = function() {
-  const login = async function() {
-    console.log('clicked me');
-    return baseService.login();
-  };
-
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
       <div className='container'>
@@ -20,18 +14,9 @@ const Container = function() {
               <a className='nav-link' href='/'>Home
                 <span className='sr-only'>(current)</span>
               </a>
-            </li>            
-            <li className='nav-item'>
-              <a className='nav-link' href='/gold'>Gold</a>
-            </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='/money'>Money</a>
             </li>
             <li className='nav-item'>
               <a className='nav-link' href='/about'>About</a>
-            </li>
-            <li className='nav-item'>
-              <a className='nav-link' onClick={login}>Login</a>
             </li>
           </ul>
         </div>

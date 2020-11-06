@@ -16,12 +16,6 @@ const RouteConfig = function() {
                 <Route exact path="/about">
                     <About />
                 </Route>
-                <Route exact path="/gold">
-                    <Gold />
-                </Route>
-                <Route exact path="/money">
-                    <Money />
-                </Route>
             </Switch>
         </Router>
     );

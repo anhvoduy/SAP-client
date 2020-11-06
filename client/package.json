@@ -14,6 +14,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.21.0",
     "i18next": "^19.6.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.3.0",
@@ -28,6 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start_ssl": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "production": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",

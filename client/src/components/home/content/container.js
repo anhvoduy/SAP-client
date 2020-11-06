@@ -1,6 +1,13 @@
 import React from 'react';
+import baseService from '../../../services/baseService';
 
 const Container = function() {
+  const callAction = (e) => {
+    e.preventDefault();
+    console.log('xxx');
+    return baseService.login();
+  };
+
   return (
       <div className='container'>
         <div className='row align-items-center my-5'>
@@ -10,7 +17,7 @@ const Container = function() {
           <div className='col-lg-5'>
             <h1 className='font-weight-light'>Business Name or Tagline</h1>
             <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-            <a className='btn btn-primary' href='/'>Call to Action!</a>
+            <a className='btn btn-primary' href='/' onClick={callAction}>Call to Action!</a>
           </div>
         </div>
         <div className='card text-white bg-secondary my-5 py-4 text-center'>

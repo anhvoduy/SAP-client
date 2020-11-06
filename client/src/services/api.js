@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://SAP-10:50000/b1s/v1/';
+const API_URL = 'https://sap-10:50000';
 const api = axios.create({
     baseURL: API_URL
 });
