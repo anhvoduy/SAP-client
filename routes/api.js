@@ -41,6 +41,22 @@ router.get('/loginsap', async function (req, res, next) {
     }
 });
 
+router.post('/loginsap', async function (req, res, next) {
+    try 
+    {
+        let data = await baseService.loginSAP(userInfo);
+        res.json({
+            code: true,
+            data: data,
+            time: moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
+        });
+        next();
+    } 
+    catch(err) {
+        throw err;
+    }
+});
+
 router.get('/items', async function (req, res, next) {
     try 
     {

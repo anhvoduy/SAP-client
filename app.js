@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
+const cors = require('cors');
 
 // setup express
 const server = express();
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
+server.use(cors());
 
 // setup api
 server.use('/api', require('./routes/api'));

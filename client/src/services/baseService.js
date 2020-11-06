@@ -4,19 +4,22 @@ const baseService = function() {
 }
 
 baseService.login = function() {
-  let msg = {
+  let info = {
     CompanyDB: "SBODemoAU",
     UserName: "manager",
     Password: "manager"
   };
   debugger;
-  return api.post('/b1s/v1/Login', msg)
-  .then(res => {
-    const data = res.data;
-    return data;
-  }).catch(err => {
-    console.log(err);
-    throw err;
+  let url = '/b1s/v1/Login';
+  //url= 'http://localhost:3001/api/loginsap';
+  return new Promise(function(resolve, reject) {
+    api.post(url, info).then(function(res) {
+      let { data } = res;
+      console.log(data);
+      resolve(data);
+    }).catch(function(err) {
+      reject(err);
+    });
   });
 }
 
