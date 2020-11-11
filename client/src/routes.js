@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './components/home';
 import About from './components/about';
-import Gold from './components/gold';
-import Money from './components/money';
 
 const RouteConfig = function() {
     return (

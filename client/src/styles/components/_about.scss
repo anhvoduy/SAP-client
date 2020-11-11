@@ -1,3 +1,7 @@
-.about-page {
-    position: relative;    
+.about-page {    
+    position: relative;
+    margin-top: 80px;
+    .bg-dark {
+        background-color: #209e91 !important;
+    }
 }
