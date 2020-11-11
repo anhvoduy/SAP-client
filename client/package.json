@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start_ssl": "set HTTPS=true&&react-scripts start",
+    "start_ssl": "set HTTPS=true&&set SSL_CRT_FILE=server.crt&&set SSL_KEY_FILE=server.key&&react-scripts start",
     "build": "react-scripts build",
     "production": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",

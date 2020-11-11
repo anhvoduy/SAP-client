@@ -8,9 +8,8 @@ baseService.login = function() {
     CompanyDB: "SBODemoAU",
     UserName: "manager",
     Password: "manager"
-  };
-  debugger;
-  let url = '/b1s/v1/Login';
+  };  
+  let url = 'https://sap-10:50000/b1s/v1/Login';
   //url= 'http://localhost:3001/api/loginsap';
   return new Promise(function(resolve, reject) {
     api.post(url, info).then(function(res) {
