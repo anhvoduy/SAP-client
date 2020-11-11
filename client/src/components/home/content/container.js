@@ -4,7 +4,7 @@ import baseService from '../../../services/baseService';
 const Container = function() {
   const callAction = (e) => {
     e.preventDefault();
-    console.log('xxx');
+    console.log('preparing to request ...');
     return baseService.login();
   };
 
