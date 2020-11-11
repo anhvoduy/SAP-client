@@ -9,8 +9,8 @@ baseService.login = function() {
     UserName: "manager",
     Password: "manager"
   };  
-  let url = 'https://sap-10:50000/b1s/v1/Login';
-  //url= 'http://localhost:3001/api/loginsap';
+  //let url = 'https://sap-10:50000/b1s/v1/Login';
+  let url= 'https://localhost:50000/b1s/v1/Login';
   return new Promise(function(resolve, reject) {
     api.post(url, info).then(function(res) {
       let { data } = res;
