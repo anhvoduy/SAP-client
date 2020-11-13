@@ -5,8 +5,7 @@ const baseService = function() {
 }
 
 baseService.login = function() {
-  let url = 'https://sap-10:50000/b1s/v1/Login';
-  //let url= 'https://localhost:50000/b1s/v1/Login';
+  let url = '/b1s/v1/Login';
   return new Promise(function(resolve, reject) {
     api.post(url, config.info).then(function(res) {
       let { data } = res;
