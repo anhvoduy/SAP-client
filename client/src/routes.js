@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './components/home';
-import About from './components/about';
+import Account from './components/account';
 
 const RouteConfig = function() {
     return (
@@ -11,8 +11,8 @@ const RouteConfig = function() {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route exact path="/about">
-                    <About />
+                <Route exact path="/account">
+                    <Account />
                 </Route>
             </Switch>
         </Router>

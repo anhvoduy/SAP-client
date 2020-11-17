@@ -8,8 +8,8 @@ const Header = function() {
         <th>Code</th>
         <th>Name</th>
         <th>Balance</th>
-        <th>Acct Level</th>
-        <th>Acct Type</th>
+        <th>Level</th>
+        <th>Type</th>
         <th>Edit</th>
       </tr>
     </thead>
