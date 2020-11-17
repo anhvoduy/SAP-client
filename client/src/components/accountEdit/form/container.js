@@ -22,7 +22,6 @@ const FormEdit = function() {
     const onChangeAccountName = (e) => {
         setAccountName(e.target.value);
         account.Name = e.target.value;
-        account.Balance = 5000;
         setAccount(account);
     }
 
