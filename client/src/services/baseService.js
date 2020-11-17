@@ -9,7 +9,7 @@ baseService.login = function() {
   return new Promise(function(resolve, reject) {
     api.post(url, config.info).then(function(res) {
       let { data } = res;
-      console.log(data);
+      //console.log(data);
       resolve(data);
     }).catch(function(err) {
       reject(err);
@@ -17,11 +17,12 @@ baseService.login = function() {
   });
 }
 
-baseService.getChartOfAccounts = function() {  
+baseService.getChartOfAccounts = function() {
+  let url = '/b1s/v1/ChartOfAccounts';
   return new Promise(function(resolve, reject) {
-    api.get('/b1s/v1/ChartOfAccounts').then(function(res) {
+    api.get(url).then(function(res) {
       let { data } = res;
-      console.log(data);
+      //console.log(data);
       resolve(data);
     }).catch(function(err) {
       reject(err);
