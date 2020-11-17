@@ -26,6 +26,7 @@
     "@sap/hana-client": "^2.5.109",
     "Q": "^1.0.0",
     "axios": "^0.20.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "http": "0.0.1-security",
     "https": "^1.0.0",

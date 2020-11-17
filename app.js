@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
+const cors = require('cors');
 
 // setup express
 const server = express();
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
+server.use(cors());
 
 // setup api
 server.use('/api', require('./routes/api'));
@@ -25,7 +27,7 @@ server.use(function (err, req, res, next) {
 });
 
 // setup http + https
-const port = 3000;
+const port = 3001;
 const portssl = 3003;
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0; // TO DO review ssl certificate
 
