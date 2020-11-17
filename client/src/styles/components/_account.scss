@@ -9,4 +9,7 @@
             padding: 0px;
         }
     }
+    .form-full-screen {
+        min-height: calc(100vh - 136px)
+    }
 }

@@ -12,7 +12,6 @@ const About = function() {
     {
       let loginInfo = await baseService.login();
       if(loginInfo) {
-        let resTotal = await baseService.getChartOfAccountTotal();
         let resAcct = await baseService.getChartOfAccounts();
         let { value } = resAcct;
         setAccounts(value);

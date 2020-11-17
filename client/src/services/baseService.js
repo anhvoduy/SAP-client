@@ -44,4 +44,28 @@ baseService.getChartOfAccountTotal = function() {
   });
 }
 
+baseService.getAccountByCode = function(acctCode) {
+  let url = `/b1s/v1/ChartOfAccounts('${acctCode}')`;
+  return new Promise(function(resolve, reject) {
+    api.get(url).then(function(res) {
+      let { data } = res;
+      resolve(data);
+    }).catch(function(err) {
+      reject(err);
+    });
+  });
+}
+
+baseService.updateAccount = function(acctCode, acctName) {
+  let url = `/b1s/v1/ChartOfAccounts('${acctCode}')`;
+  return new Promise(function(resolve, reject) {
+    api.patch(url, { Name: acctName }).then(function(res) {
+      if(res && (res.status === 200 || res.status === 204)) resolve(true);
+      else resolve(false)
+    }).catch(function(err) {
+      reject(err);
+    });
+  });
+}
+
 export default baseService;

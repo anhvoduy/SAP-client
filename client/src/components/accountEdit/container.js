@@ -1,37 +1,15 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import Header from '../base/header';
-import AboutList from './list';
 import Footer from '../base/footer';
-import baseService from '../../services/baseService';
+import FormEdit from './form';
 
 const EditContainer = function() {
-  const [accounts, setAccounts] = useState([]);
-
-  const queryData = useCallback(async function () {
-    try
-    {
-      let loginInfo = await baseService.login();
-      if(loginInfo) {
-        let resAcct = await baseService.getChartOfAccounts();
-        let { value } = resAcct;
-        setAccounts(value);
-      }
-    }
-    catch (err) {
-      throw err;
-    }
-  }, []);
-  
-  useEffect(() => {
-    queryData();
-  },[queryData]);
-
   return (
     <div className='wrap account-page'>
       <Header />
-      
-      <AboutList accounts={accounts}/>
-      
+
+      <FormEdit />
+
       <Footer />
     </div>
   );
