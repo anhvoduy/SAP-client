@@ -4,7 +4,7 @@ import AboutList from './list';
 import Footer from '../base/footer';
 import baseService from '../../services/baseService';
 
-const About = function() {
+const EditContainer = function() {
   const [accounts, setAccounts] = useState([]);
 
   const queryData = useCallback(async function () {
@@ -12,7 +12,6 @@ const About = function() {
     {
       let loginInfo = await baseService.login();
       if(loginInfo) {
-        let resTotal = await baseService.getChartOfAccountTotal();
         let resAcct = await baseService.getChartOfAccounts();
         let { value } = resAcct;
         setAccounts(value);
@@ -38,4 +37,4 @@ const About = function() {
   );
 }
 
-export default About;
+export default EditContainer;
