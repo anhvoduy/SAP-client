@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
 
 const Row = function({ index, rowItem }) {  
   return (
@@ -12,11 +12,12 @@ const Row = function({ index, rowItem }) {
       <td>{rowItem.AccountLevel}</td>
       <td>{rowItem.AccountType}</td>
       <td className='row-btn'>
-        <Button variant="link" onClick={() => {console.log('clicked me at:', rowItem.Code)}}>Edit</Button>
+        <Link to={`/account/${rowItem.Code}`}>HE</Link>
       </td>
     </tr>
   );
 }
+
 
 Row.propTypes = {
   index: PropTypes.number,

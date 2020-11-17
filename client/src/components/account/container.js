@@ -27,7 +27,7 @@ const About = function() {
   },[queryData]);
 
   return (
-    <div className='wrap about-page'>
+    <div className='wrap account-page'>
       <Header />
       
       <AboutList accounts={accounts}/>

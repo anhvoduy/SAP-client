@@ -1,4 +1,4 @@
-.about-page {    
+.account-page {    
     position: relative;
     margin-top: 80px;
     .bg-dark {
@@ -8,5 +8,8 @@
         button.btn.btn-link {
             padding: 0px;
         }
+    }
+    .form-full-screen {
+        min-height: calc(100vh - 136px)
     }
 }
