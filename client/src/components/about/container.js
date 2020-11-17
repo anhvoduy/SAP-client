@@ -1,17 +1,21 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Header from '../base/header';
+import AboutList from './list';
 import Footer from '../base/footer';
 import baseService from '../../services/baseService';
 
-const Container = function() {
+const About = function() {
+  const [accounts, setAccounts] = useState([]);
+
   const queryData = useCallback(async function () {
-    try 
+    try
     {
       let loginInfo = await baseService.login();
-      console.log('loginInfo:', loginInfo);
-
-      let accounts = await baseService.getChartOfAccounts();
-      console.log('accounts:', accounts);
+      if(loginInfo) {
+        let resAcct = await baseService.getChartOfAccounts();
+        let { value } = resAcct;
+        setAccounts(value);
+      }
     }
     catch (err) {
       throw err;
@@ -25,10 +29,12 @@ const Container = function() {
   return (
     <div className='wrap about-page'>
       <Header />
-      <div>About Us</div>
+      
+      <AboutList accounts={accounts}/>
+      
       <Footer />
     </div>
   );
 }
 
-export default Container;
+export default About;

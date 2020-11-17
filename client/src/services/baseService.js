@@ -23,7 +23,12 @@ baseService.getChartOfAccounts = function() {
     api.get(url).then(function(res) {
       let { data } = res;
       //console.log(data);
-      resolve(data);
+      
+      resolve({
+        metadata: data.metadata,
+        nextLink: data.nextLink,
+        value: data.value
+      });
     }).catch(function(err) {
       reject(err);
     });
