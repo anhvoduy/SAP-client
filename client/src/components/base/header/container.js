@@ -16,7 +16,7 @@ const Container = function() {
               </a>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='/about'>About</a>
+              <a className='nav-link' href='/account'>Account</a>
             </li>
           </ul>
         </div>
