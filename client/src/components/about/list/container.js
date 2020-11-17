@@ -11,8 +11,7 @@ const AboutList = function({ accounts }) {
       </Row>
       <Row>
         <Table striped bordered hover size="sm">
-          <TableHeader />
-          
+          <TableHeader />          
           <TableContent accounts={accounts}/>         
         </Table>
       </Row>

@@ -11,16 +11,16 @@ const Row = function({ index, rowItem }) {
       <td>{rowItem.Balance}</td>
       <td>{rowItem.AccountLevel}</td>
       <td>{rowItem.AccountType}</td>
-      <td>
-          <Button variant="link">Edit</Button>
+      <td className='row-btn'>
+        <Button variant="link" onClick={() => {console.log('clicked me at:', rowItem.Code)}}>Edit</Button>
       </td>
     </tr>
   );
 }
 
 Row.propTypes = {
-    index: PropTypes.number,
-    rowItem: PropTypes.object
+  index: PropTypes.number,
+  rowItem: PropTypes.object
 }
 
 export default Row;

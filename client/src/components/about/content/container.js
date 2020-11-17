@@ -1,12 +1,12 @@
 import React from 'react';
-import Row from './row';
+import RowItem from './row';
 
 const Content = function({ accounts }) {  
   return (
     <tbody>
       {
         (Array.isArray(accounts) && accounts.length) 
-        ? accounts.map((item, index) => <Row key={'key' + index} index={index} rowItem={item} />)
+        ? accounts.map((item, index) => <RowItem key={'key' + index} index={index} rowItem={item} />)
         : null
       }      
     </tbody>
